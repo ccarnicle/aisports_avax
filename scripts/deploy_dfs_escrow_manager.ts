@@ -70,6 +70,13 @@ async function main() {
     console.log(`NEXT_PUBLIC_EVM_ESCROW_ADDRESS_BASE_SEPOLIA=${dfsEscrowManagerAddress}`);
     // Keep env var name aligned with existing frontend config key.
     console.log(`NEXT_PUBLIC_PYUSD_ADDRESS_BASE_SEPOLIA=0x036CbD53842c5426634e7929541eC2318f3dCF7e`);
+  } else if (network.name === 'avalancheFuji') {
+    console.log("\nFor frontend .env (Avalanche Fuji):");
+    console.log(`NEXT_PUBLIC_EVM_ESCROW_ADDRESS_AVALANCHE_FUJI=${dfsEscrowManagerAddress}`);
+    console.log(`NEXT_PUBLIC_USDC_ADDRESS_AVALANCHE_FUJI=0x5425890298aed601595a70AB815c96711a31Bc65`);
+    console.log("\nFor backend .env (Avalanche Fuji):");
+    console.log(`EVM_ESCROW_MANAGER_ADDRESS_AVALANCHE_FUJI=${dfsEscrowManagerAddress}`);
+    console.log(`TOKEN_ADDRESS_AVALANCHE_FUJI=0x5425890298aed601595a70AB815c96711a31Bc65`);
   } else {
     console.log("\nFor frontend .env.local file:");
     console.log(`NEXT_PUBLIC_EVM_ESCROW_ADDRESS_TESTNET=${dfsEscrowManagerAddress}`);

@@ -46,6 +46,11 @@ const config: HardhatUserConfig = {
       chainId: 8453,
       accounts: process.env.MAINNET_PRIVATE_KEY ? [process.env.MAINNET_PRIVATE_KEY] : [],
     },
+    avalancheFuji: {
+      url: 'https://api.avax-test.network/ext/bc/C/rpc',
+      chainId: 43113,
+      accounts: process.env.DEPLOYER_PRIVATE_KEY ? [process.env.DEPLOYER_PRIVATE_KEY] : [],
+    },
   },
   etherscan: {
     // Single key = Etherscan API v2 (one key for all supported chains: Arbitrum, Base, etc.)
@@ -82,6 +87,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: 'https://api-sepolia.basescan.org/api',
           browserURL: 'https://sepolia.basescan.org/',
+        },
+      },
+      {
+        network: 'avalancheFuji',
+        chainId: 43113,
+        urls: {
+          apiURL: 'https://api-testnet.snowtrace.io/api',
+          browserURL: 'https://testnet.snowtrace.io/',
         },
       },
     ],
